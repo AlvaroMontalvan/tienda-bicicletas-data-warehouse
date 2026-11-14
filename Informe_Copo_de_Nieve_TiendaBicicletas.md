@@ -65,17 +65,17 @@ Cada tabla tiene su propia transformación, que lee una hoja de Excel y escribe 
 
 **Tabla 1.** Transformaciones de Pentaho
 
-| N.º | Tabla destino | Hoja de Excel | Qué hace | Filas | Archivo en el repositorio |
-|---|---|---|---|---|---|
-| 1 | `dim_brand` | Sheet1 | Carga las marcas tal como vienen en el Excel. | 9 | [`Pentaho/1_dim_brand.ktr`](Pentaho/1_dim_brand.ktr) |
-| 2 | `dim_category` | Sheet7 | Carga las categorías de producto sin cambios. | 7 | [`Pentaho/2_dim_category.ktr`](Pentaho/2_dim_category.ktr) |
-| 3 | `dim_product` | Sheet4 | Carga los productos con sus claves `brand_id` y `category_id`, que los unen a las dos tablas anteriores. | 321 | [`Pentaho/3_dim_product.ktr`](Pentaho/3_dim_product.ktr) |
-| 4 | `dim_store` | Sheet8 | Carga las tiendas sin cambios. | 3 | [`Pentaho/4_dim_store.ktr`](Pentaho/4_dim_store.ktr) |
-| 5 | `dim_staff` | Sheet3 | Quita el texto `NULL` de `manager_id` (un empleado, el jefe) con Replace in string y pasa la columna a entero con Select values. | 10 | [`Pentaho/5_dim_staff.ktr`](Pentaho/5_dim_staff.ktr) |
-| 6 | `dim_customer` | Sheet6 | Quita el texto `NULL` del teléfono con Replace in string (1267 clientes sin teléfono). | 1445 | [`Pentaho/6_dim_customer.ktr`](Pentaho/6_dim_customer.ktr) |
-| 7 | `dim_date` | Calendar | Carga el calendario de 2016 a 2018 con año, trimestre, mes y día de la semana. | 1095 | [`Pentaho/7_dim_date.ktr`](Pentaho/7_dim_date.ktr) |
-| 8 | `fact_stock` | Sheet2 | Carga el inventario por tienda y producto. Vacía la tabla antes de cargar para poder repetir la ejecución. | 939 | [`Pentaho/8_fact_stock.ktr`](Pentaho/8_fact_stock.ktr) |
-| 9 | `fact_sales` | Sheet5 | Quita el texto `NULL` de `shipped_date` con Replace in string y la pasa a fecha con Select values. Vacía la tabla antes de cargar. | 4722 | [`Pentaho/9_fact_sales.ktr`](Pentaho/9_fact_sales.ktr) |
+| N.º | Tabla destino | Qué hace | Archivo en el repositorio |
+|---|---|---|---|
+| 1 | `dim_brand` | Carga las marcas tal como vienen en el Excel. | [`Pentaho/1_dim_brand.ktr`](Pentaho/1_dim_brand.ktr) |
+| 2 | `dim_category` | Carga las categorías de producto sin cambios. | [`Pentaho/2_dim_category.ktr`](Pentaho/2_dim_category.ktr) |
+| 3 | `dim_product` | Carga los productos con sus claves `brand_id` y `category_id`, que los unen a las dos tablas anteriores. | [`Pentaho/3_dim_product.ktr`](Pentaho/3_dim_product.ktr) |
+| 4 | `dim_store` | Carga las tiendas sin cambios. | [`Pentaho/4_dim_store.ktr`](Pentaho/4_dim_store.ktr) |
+| 5 | `dim_staff` | Quita el texto `NULL` de `manager_id` (un empleado, el jefe) con Replace in string y pasa la columna a entero con Select values. | [`Pentaho/5_dim_staff.ktr`](Pentaho/5_dim_staff.ktr) |
+| 6 | `dim_customer` | Quita el texto `NULL` del teléfono con Replace in string (1267 clientes sin teléfono). | [`Pentaho/6_dim_customer.ktr`](Pentaho/6_dim_customer.ktr) |
+| 7 | `dim_date` | Carga el calendario de 2016 a 2018 con año, trimestre, mes y día de la semana. | [`Pentaho/7_dim_date.ktr`](Pentaho/7_dim_date.ktr) |
+| 8 | `fact_stock` | Carga el inventario por tienda y producto. Vacía la tabla antes de cargar para poder repetir la ejecución. | [`Pentaho/8_fact_stock.ktr`](Pentaho/8_fact_stock.ktr) |
+| 9 | `fact_sales` | Quita el texto `NULL` de `shipped_date` con Replace in string y la pasa a fecha con Select values. Vacía la tabla antes de cargar. | [`Pentaho/9_fact_sales.ktr`](Pentaho/9_fact_sales.ktr) |
 
 <a id="figura-2"></a>
 
